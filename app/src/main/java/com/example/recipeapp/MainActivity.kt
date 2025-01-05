@@ -4,12 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
@@ -65,32 +67,61 @@ fun RecipeGen()
     //)
 
     Column(
-        modifier = Modifier.padding(50.dp).fillMaxSize()
+        modifier = Modifier.padding(25.dp).fillMaxSize()
     ) {
-        Column(modifier = Modifier.padding(30.dp).fillMaxWidth(),
+        Column(modifier = Modifier.padding(1.dp).fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             )
         {
-            Text(text = "Recipe Generator",
+            Spacer(modifier = Modifier.padding(35.dp))
+            Text(text = "Let's get cooking,",
                 textAlign = TextAlign.Center,
-                fontSize = 30.sp,
+                fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily.Monospace
+                fontFamily = FontFamily.SansSerif
                 )
+            Text(text = "Jordan",
+                textAlign = TextAlign.Center,
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.SansSerif
+            )
 
-            Spacer(modifier = Modifier.padding(50.dp))
+            Spacer(modifier = Modifier.padding(35.dp))
 
 
 
         }
-        Card(modifier = Modifier.padding(10.dp).fillMaxWidth().height(200.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = Color(0xFFD8C0AC),
-                contentColor = Color.Black),
-
+        Box(modifier = Modifier.padding(10.dp).fillMaxWidth().height(500.dp),
             )
         {
+            Card(
+                modifier = Modifier.padding(10.dp).fillMaxWidth().height(210.dp),
+                shape = RoundedCornerShape(25.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(0xFFd1d1d1),
+                    contentColor = Color.Black
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 30.dp)
 
+            )
+            {
+
+            }
+
+            Card(
+                modifier = Modifier.padding(10.dp).fillMaxWidth().height(150.dp),
+                shape = RoundedCornerShape(25.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(0xFFD8C0AC),
+                    contentColor = Color.Black
+                ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
+
+            )
+            {
+
+            }
         }
     }
 }
